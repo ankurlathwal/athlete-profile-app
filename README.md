@@ -1,10 +1,10 @@
-#Athlete Profile App
+# Athlete Profile App
 
-#Usage
+# Usage
 
-##install
+## install
 `npm install`
 
-##run
+## run
 `npm start`
 `http://localhost:3000`
