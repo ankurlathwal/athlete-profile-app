@@ -35,7 +35,10 @@
     <span class="error" ng-show="athlete.dob.$touched && athlete.dob.$invalid">Please select a valid date of birth</span>
 </div>
 <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 offset-lg-3 offset-md-3 offset-sm-3">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <a ui-sref="athletes" class="btn btn-block btn-warning">&#171; Go back to home</a>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <a ui-sref="form.about" class="btn btn-block btn-info">Next Section &#187;</a>
     </div>
 </div>

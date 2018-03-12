@@ -36,6 +36,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'athleteController'
         })
 
+        .state('athletes-added',{
+            url: '/athletes/added',
+            templateUrl: 'views/athletes-added.html',
+        })
+
+
         
         
        

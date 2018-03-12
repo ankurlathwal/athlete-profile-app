@@ -1,4 +1,4 @@
-app.controller('formController', function($scope,$http) {
+app.controller('formController', function($scope,$http,$location) {
     
     
     $scope.athlete = {};
@@ -9,6 +9,7 @@ app.controller('formController', function($scope,$http) {
         $http.post("/athlete",$scope.athlete).then(function(response){
             console.log("Response Status: " + response.statusCode);
             console.log("Response Message: "+ response.statusText);
+            $location.path("/athletes/added");
         },function(error){
             console.log("An error occurred: " + error.statusText);             
         });

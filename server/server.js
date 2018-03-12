@@ -48,6 +48,19 @@ app.post("/athlete",function(req,res){
 
 });
 
+app.delete("/athlete/:name",function(req,res){
+    Athlete.find({basicinfo: {name: req.query.name}}).remove(function(err){
+      if(err){
+        res.statusCode = 404;
+        res.statusMessage = "Could not delete Athlete";
+        res.send();
+      }
+      res.statusCode = 200;
+      res.statusMessage = "Athlete deleted successfully";
+      res.send();
+    });
+});
+
  
 const server = app.listen(process.env.PORT || 3000, function() {
   const host = server.address().address;
