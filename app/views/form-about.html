@@ -1,0 +1,27 @@
+<div class="progress">
+    <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+</div>
+<h2>About</h2>
+<div class="form-group">
+    <label for="desciption">Description</label>
+    <textarea id="description" class="form-control" ng-model="athlete.about.description" aria-describedby="descHelp" required></textarea>
+    <small id="descHelp" class="form-text text-muted">Enter some description about the athlete</small>
+</div>
+<div class="form-group">
+    <label for="location">Location</label>
+    <input id="location" class="form-control" type="text" ng-model="athlete.about.location" aria-describedby="locationHelp" placeholder="Enter the current location city and country" required>
+    <small id="locationHelp" class="form-text text-muted">Enter the current location city and country</small>
+</div>
+<div class="form-group">
+    <label for="team">Team</label>
+    <input id="team" class="form-control" type="text" ng-model="athlete.about.team" aria-describedby="teamHelp" placeholder="Athlete's current team" required>
+    <small id="locationHelp" class="form-text text-muted">Enter the full name lof athlete's current team</small>
+</div>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <a ui-sref="form.basicinfo" class="btn btn-block btn-warning">&#171; Previous</a>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <a ui-sref="form.social" class="btn btn-block btn-info">Next Section &#187;</a>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="progress">
+    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+</div>
+<h2>Basic Info</h2>
+<div class="form-group">
+    <label for="name">Athlete Name</label>
+    <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter full name" ng-model="athlete.basicinfo.name" required>
+    <small id="nameHelp" class="form-text text-muted">Please enter the full name</small>
+</div>
+<div class="form-group">
+    <label for="sport">Select Sport</label>
+    <select class="form-control" id="sport" ng-model="athlete.basicinfo.sport" required>
+        <option>Soccer</option>
+        <option>Cricket</option>
+        <option>BasketBall</option>
+        <option>Football</option>
+        <option>Baseball</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="nationality">Select Nationality</label>
+    <country-select cs-required class="form-control" id="nationality" ng-model="athlete.basicinfo.nationality" required></country-select>
+</div>
+<div class="form-group">
+    <label for="gender">Select gender</label>
+    <select class="form-control" id="gender" ng-model="athlete.basicinfo.gender" required>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="dob">Enter Date of Birth</label>
+    <input class="form-control" id="dob" type="date" ng-model="athlete.basicinfo.dob" required>
+</div>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 offset-lg-3 offset-md-3 offset-sm-3">
+        <a ui-sref="form.about" class="btn btn-block btn-info">Next Section &#187;</a>
+    </div>
+</div>
