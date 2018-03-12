@@ -8,9 +8,10 @@
         <div class="input-group-prepend">
             <div class="input-group-text">@</div>
         </div>
-        <input id="twitter" class="form-control" type="text" ng-model="athlete.social.twitter" aria-describedby="twitterHelp" placeholder="Athlete's twitter handle URL">
+        <input name="twitter" id="twitter" class="form-control" type="text" ng-model="athlete.social.twitter" aria-describedby="twitterHelp" placeholder="Athlete's twitter handle URL">
     </div>
         <small id="twitterHelp" class="form-text text-muted">Enter the twitter handle name</small>
+        <span class="error" ng-show="athlete.twitter.$touched && athlete.twitter.$invalid">Twitter handle is required</span>
     
     
 </div>
@@ -20,10 +21,10 @@
         <div class="input-group-prepend">
             <div class="input-group-text">facebook.com/</div>
         </div>
-        <input id="facebook" class="form-control" type="text" ng-model="athlete.social.facebook" aria-describedby="facebookHelp" placeholder="Athlete's facebook page URL">
+        <input name="facebook" id="facebook" class="form-control" type="text" ng-model="athlete.social.facebook" aria-describedby="facebookHelp" placeholder="Athlete's facebook page URL">
     </div>
         <small id="twitterHelp" class="form-text text-muted">Enter the facebook page name</small>
-        
+        <span class="error" ng-show="athlete.facebook.$touched && athlete.facebook.$invalid">Facebook page is required</span>
 </div>
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

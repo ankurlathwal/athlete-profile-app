@@ -13,12 +13,19 @@ mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-app.get("/athlete/:id",function(req,res){
-  var athlete = {id: null,basicinfo:{}};
-  athlete.id = req.params.id;
-  athlete.basicinfo.name = "Ankur Lathwal";
-  athlete.basicinfo.sport = "Cricket";
-  res.send(athlete);
+app.get("/athlete",function(req,res){
+  
+  Athlete.find({},function(err, athletes){
+    if(err) {
+      res.statusCode = 404;
+      res.statusMessage = "Error fetching records from database";
+      res.send();
+    }
+      res.statusCode = 200;
+      res.statusMessage = "Success";
+      res.send(athletes);
+  });
+ 
 });
 
 app.post("/athlete",function(req,res){
@@ -29,9 +36,14 @@ app.post("/athlete",function(req,res){
   athleteInstance.social = data.social;
 
   athleteInstance.save(function (err) {
-    if (err) return handleError(err);
-    console.log("Athlete saved");
-    res.send({"message":"Athlete Saved"});
+    if (err) {
+      res.statusCode = 404;
+      res.statusMessage = "Error adding record to database";
+      res.send();
+    }
+    res.statusCode = 200;
+    res.statusMessage = "Athlete saved to database";
+    res.send();
   });
 
 });

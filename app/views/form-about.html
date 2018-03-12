@@ -4,18 +4,20 @@
 <h2>About</h2>
 <div class="form-group">
     <label for="desciption">Description</label>
-    <textarea id="description" class="form-control" ng-model="athlete.about.description" aria-describedby="descHelp" required></textarea>
+    <textarea id="description" class="form-control" ng-model="athlete.about.description" aria-describedby="descHelp"></textarea>
     <small id="descHelp" class="form-text text-muted">Enter some description about the athlete</small>
 </div>
 <div class="form-group">
     <label for="location">Location</label>
-    <input id="location" class="form-control" type="text" ng-model="athlete.about.location" aria-describedby="locationHelp" placeholder="Enter the current location city and country" required>
+    <input name="location" id="location" class="form-control" type="text" ng-model="athlete.about.location" aria-describedby="locationHelp" placeholder="Enter the current location city and country" required>
     <small id="locationHelp" class="form-text text-muted">Enter the current location city and country</small>
+    <span class="error" ng-show="athlete.location.$touched && athlete.location.$invalid">Location is required</span>
 </div>
 <div class="form-group">
     <label for="team">Team</label>
-    <input id="team" class="form-control" type="text" ng-model="athlete.about.team" aria-describedby="teamHelp" placeholder="Athlete's current team" required>
+    <input id="team" name="team" class="form-control" type="text" ng-model="athlete.about.team" aria-describedby="teamHelp" placeholder="Athlete's current team" required>
     <small id="locationHelp" class="form-text text-muted">Enter the full name lof athlete's current team</small>
+    <span class="error" ng-show="athlete.team.$touched && athlete.team.$invalid">Team name is required</span>
 </div>
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

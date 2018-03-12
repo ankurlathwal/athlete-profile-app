@@ -4,34 +4,35 @@
 <h2>Basic Info</h2>
 <div class="form-group">
     <label for="name">Athlete Name</label>
-    <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter full name" ng-model="athlete.basicinfo.name" required>
+    <input type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter full name" ng-model="athlete.basicinfo.name" required>
     <small id="nameHelp" class="form-text text-muted">Please enter the full name</small>
+    <span class="error" ng-show="athlete.name.$touched && athlete.name.$invalid">Name is required</span>
 </div>
 <div class="form-group">
     <label for="sport">Select Sport</label>
-    <select class="form-control" id="sport" ng-model="athlete.basicinfo.sport" required>
-        <option>Soccer</option>
-        <option>Cricket</option>
-        <option>BasketBall</option>
-        <option>Football</option>
-        <option>Baseball</option>
+    <select name="sport" class="form-control" id="sport" ng-model="athlete.basicinfo.sport" required>
+        <option ng-repeat="sport in sports">{{sport}}</option>
     </select>
+    <span class="error" ng-show="athlete.sport.$touched && athlete.sport.$invalid">Sport is required</span>
 </div>
 <div class="form-group">
     <label for="nationality">Select Nationality</label>
-    <country-select cs-required class="form-control" id="nationality" ng-model="athlete.basicinfo.nationality" required></country-select>
+    <country-select name="nationality" cs-required class="form-control" id="nationality" ng-model="athlete.basicinfo.nationality" required></country-select>
+    <span class="error" ng-show="athlete.nationality.$touched && athlete.nationality.$invalid">Nationality is required</span>
 </div>
 <div class="form-group">
     <label for="gender">Select gender</label>
-    <select class="form-control" id="gender" ng-model="athlete.basicinfo.gender" required>
+    <select name="gender" class="form-control" id="gender" ng-model="athlete.basicinfo.gender" required>
         <option>Male</option>
         <option>Female</option>
         <option>Other</option>
     </select>
+    <span class="error" ng-show="athlete.gender.$touched && athlete.gender.$invalid">Gender is required</span>
 </div>
 <div class="form-group">
     <label for="dob">Enter Date of Birth</label>
-    <input class="form-control" id="dob" type="date" ng-model="athlete.basicinfo.dob" required>
+    <input name="dob" class="form-control" id="dob" type="date" ng-model="athlete.basicinfo.dob" required>
+    <span class="error" ng-show="athlete.dob.$touched && athlete.dob.$invalid">Please select a valid date of birth</span>
 </div>
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 offset-lg-3 offset-md-3 offset-sm-3">

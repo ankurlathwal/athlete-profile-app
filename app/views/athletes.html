@@ -1,0 +1,18 @@
+<h2>Athletes Database</h2>
+<a ui-sref="form.basicinfo" class="btn btn-warning">+ Add New</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th ng-click="orderByFilter('basicinfo.name')">Name</th>
+            <th ng-click="orderByFilter('basicinfo.sport')">Sport</th>
+            <th ng-click="orderByFilter('basicinfo.nationality')">Nationality</th>
+            <th ng-click="orderByFilter('about.location')">Location</th>
+        </tr>
+    </thead>
+    <tr ng-repeat="athlete in athletes | orderBy: orderByProperty" ng-click="">
+        <td>{{athlete.basicinfo.name}}</td>
+        <td>{{athlete.basicinfo.sport}}</td>
+        <td>{{athlete.basicinfo.nationality}}</td>
+        <td>{{athlete.about.location}}</td>
+    </tr>
+</table>    

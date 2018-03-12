@@ -29,8 +29,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/summary',
             templateUrl: 'views/form-summary.html'
         })
+
+        .state('athletes',{
+            url: '/athletes',
+            templateUrl: 'views/athletes.html',
+            controller: 'athleteController'
+        })
+
+        
         
        
    
-    $urlRouterProvider.otherwise('/form/basicinfo');
+    $urlRouterProvider.otherwise('/athletes');
 })
